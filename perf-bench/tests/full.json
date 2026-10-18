@@ -1,0 +1,9 @@
+{
+ "description": "Health gate, prefill sweep, decode sweep at depth, and prompt-cache hit test.",
+ "cases": {
+  "ping": {"type": "health"},
+  "pp": {"type": "prefill", "sweep_values": [512, 2048, 8192]},
+  "tg": {"type": "decode", "sweep_values": [1024, 8192, 32768], "tokens": 128},
+  "cache": {"type": "kv-cache", "prefix_tokens": 8192, "hits": 3, "tokens": 32}
+ }
+}

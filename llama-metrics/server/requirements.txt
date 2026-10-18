@@ -1,0 +1,7 @@
+# llama-metrics server dependencies.
+#
+# `mcp` is the only direct dependency; it pulls in uvicorn, starlette, anyio,
+# httpx, pydantic and the rest of the runtime automatically. uvicorn is pinned
+# explicitly because the MCP streamable-http transport runs on it.
+mcp==2.1.1
+uvicorn==0.52.4

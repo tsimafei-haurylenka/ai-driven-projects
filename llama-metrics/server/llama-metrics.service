@@ -1,0 +1,14 @@
+[Unit]
+Description=llama-metrics (MCP + HTTP metrics for llama-server)
+After=network.target
+
+[Service]
+User=__USER__
+WorkingDirectory=__PREFIX__
+ExecStart=__PYTHON__ __PREFIX__/llama_metrics.py
+Restart=always
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

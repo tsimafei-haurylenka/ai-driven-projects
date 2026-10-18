@@ -1,0 +1,12 @@
+{
+ "targets": ["local"],
+ "model": "put-model-id-here",
+ "tests": ["health", "prefill", "decode", "kv-cache"],
+ "tag": "default",
+ "depths": "1024,8192,32768",
+ "pp_sizes": "512,2048,8192",
+ "repeat": 3,
+ "timeout": 600,
+ "gpu": "auto",
+ "out": "results"
+}

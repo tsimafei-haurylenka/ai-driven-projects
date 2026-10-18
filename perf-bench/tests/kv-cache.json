@@ -1,0 +1,6 @@
+{
+ "description": "Cold fill of a large prefix, then repeated queries hitting the same prefix (prompt-cache speedup).",
+ "cases": {
+  "cache": {"type": "kv-cache", "prefix_tokens": 8192, "hits": 3, "tokens": 32}
+ }
+}

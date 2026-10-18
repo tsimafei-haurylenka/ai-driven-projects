@@ -1,0 +1,5 @@
+{
+ "local": {"host": "127.0.0.1", "port": 8080, "model": "put-model-id-here"},
+ "lan-swap": {"host": "put-host-or-ip-here", "port": 8080, "model": "put-model-id-here", "api_key_env": "PERF_BENCH_KEY"},
+ "ollama": {"host": "127.0.0.1", "port": 11434, "model": "put-model-id-here"}
+}

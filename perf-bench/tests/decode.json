@@ -1,0 +1,6 @@
+{
+ "description": "Token generation measured at increasing context depth (single streaming request per point).",
+ "cases": {
+  "tg": {"type": "decode", "sweep_values": [1024, 8192, 32768], "tokens": 128, "chars_per_token": 4}
+ }
+}

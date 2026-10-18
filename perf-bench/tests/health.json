@@ -1,0 +1,6 @@
+{
+ "description": "Server reachability and model listing (cheap warm-up gate).",
+ "cases": {
+  "ping": {"type": "health"}
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "description": "Prompt processing at several sizes (unique prompts, no cache reuse).",
+ "cases": {
+  "pp": {"type": "prefill", "sweep_values": [512, 2048, 8192], "chars_per_token": 4}
+ }
+}
