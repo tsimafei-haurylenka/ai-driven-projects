@@ -570,6 +570,8 @@ RE_PROMPT_FULL = re.compile(
 RE_PROMPT_EVAL = re.compile(r"prompt eval time.*?\(\s*[\d.]+\s+ms per token,\s*([\d.]+)\s+tokens per second\)")
 RE_EVAL = re.compile(r"eval time.*?\(\s*[\d.]+\s+ms per token,\s*([\d.]+)\s+tokens per second\)")
 RE_DRAFT = re.compile(r"draft acceptance =\s*([\d.]+)")
+TG_MAX = 2000     # above this, a tg sample is timing garbage, not a real speed
+PP_MAX = 1_000_000
 RE_STRATA_GEN = re.compile(
     r"\[strata\].*?:\s*([\d,]+)\s+of\s+(?:max\s+([\d,]+)|budget\s+[\d,]+\s*\(max\s+[\d,]+\))"
     r"\s+tokens,\s*([\d.]+)\s+tok/s")
@@ -637,11 +639,15 @@ def new_model_state():
 
 
 def _sample_tg(js, v):
+    if not (0 < v <= TG_MAX):  # junk from near-zero timing intervals (can reach 1e5+)
+        return
     js["tg_samples"].append(round(v, 2))
     js["tg_seq"] += 1
 
 
 def _sample_pp(js, v):
+    if not (0 < v <= PP_MAX):  # PP legitimately bursts to 1e5 on cache loads; above that is junk
+        return
     js["pp_samples"].append(round(v, 2))
     js["pp_seq"] += 1
 
@@ -712,10 +718,13 @@ def parse_line(line, js):
     now = now_ms()
     m = RE_TG.search(line)
     if m:
-        js["gen"] = float(m.group(2) if m.group(2) is not None else m.group(1))
-        js["gen_at"] = now; js["last_activity"] = now
-        js["gen_line"] = line[:140]
-        _sample_tg(js, js["gen"])
+        v = float(m.group(2) if m.group(2) is not None else m.group(1))
+        if 0 < v <= TG_MAX:
+            js["gen"] = v
+            js["gen_at"] = now
+            js["gen_line"] = line[:140]
+        js["last_activity"] = now
+        _sample_tg(js, v)
         return
     if "prompt processing" in line:
         m = RE_PROMPT.search(line)
@@ -1170,7 +1179,7 @@ def _session_for(gpu_idx):
     s = _sessions.get(gpu_idx)
     if s is None:
         s = _sessions[gpu_idx] = {
-            "model": None, "max": 1.0,
+            "model": None,
             "tg": deque(maxlen=500), "pp": deque(maxlen=500),
             "temp": deque(maxlen=500), "hot": deque(maxlen=500),
             "pwr": deque(maxlen=500),
@@ -1185,15 +1194,10 @@ def _push_samples(sess, mid, js):
         sess["model"] = mid
         sess["tg"].clear(); sess["pp"].clear()
         sess["tg_seq"] = 0; sess["pp_seq"] = 0
-        sess["max"] = 1.0
     n = js["tg_seq"] - sess["tg_seq"]
     if n > 0:
         for v in list(js["tg_samples"])[-n:]:
             sess["tg"].append(v)
-            if v > sess["max"]:
-                sess["max"] = v
-        if sess["max"] > 10:
-            sess["max"] *= 0.99
         sess["tg_seq"] = js["tg_seq"]
     n = js["pp_seq"] - sess["pp_seq"]
     if n > 0:
@@ -1208,6 +1212,14 @@ def _hist_bins(deq, width, bins):
         i = int(v // width)
         counts[min(i, bins - 1)] += 1
     return counts
+
+
+def _gauge_scale(deq):
+    # 98th-percentile speed headroom for the TG bar; immune to single outliers.
+    if not deq:
+        return 1.0
+    vals = sorted(deq)
+    return round(vals[min(len(vals) - 1, int(len(vals) * 0.98))], 1) or 1.0
 
 
 def _agg(deq, width):
@@ -1241,7 +1253,7 @@ def build_stats():
             out.append({
                 "gpu": idx, "alias": g.get("alias"),
                 "tg": dict(tg_s, display=round(gen_disp, 1),
-                           session_max=round(s["max"], 1) if s else 1.0),
+                           session_max=_gauge_scale(s["tg"]) if s else 1.0),
                 "pp": dict(pp_s, display=round(pp_disp, 1),
                            progress=r.get("pp_progress", 0.0), eta_s=r.get("pp_eta")),
                 "mtp": r.get("mtp", 0.0), "mtp_valid": r.get("mtp_valid", False),
