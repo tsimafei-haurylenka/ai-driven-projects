@@ -18,5 +18,6 @@ else:
     except FileNotFoundError:
         answered = set()
 todo = len(qs) - len(answered)
+# always exit 0: a non-zero code renders as "bash failed" in the harness;
+# the model reads the printed status, not the exit code
 print(f"{bench}: answered {len(answered)}/{len(qs)}, remaining {todo}")
-sys.exit(0 if todo == 0 else 1)

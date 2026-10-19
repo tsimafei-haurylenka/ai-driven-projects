@@ -20,7 +20,7 @@ RUNDIR="$BENCH_DIR/runs/$RUN_NAME"                     # persistent results; mou
 # LM Studio endpoint. Override to match your setup via env vars:
 LMSTUDIO_HOST="${BENCH_LMSTUDIO_HOST:-192.168.1.104}"         # llama.cpp server (reachable from host and from containers)
 LMSTUDIO_PORT="${BENCH_LMSTUDIO_PORT:-8080}"                  # preflight checks it before burning an hour on a dead endpoint
-CTX="${BENCH_CTX:-150000}"                                       # contextWindow in models.json — set to LM Studio's actual window (pi compacts near this limit)
+CTX="${BENCH_CTX:-}"                                          # contextWindow for models.json; empty = auto from llama-swap context_length (set BENCH_CTX to override)
 KEY="${BENCH_LMSTUDIO_KEY:-lmstudio}"                           # placeholder key; LM Studio ignores Authorization unless auth is enabled
 
 # "provider/id" -> --provider P --model id ; bare name -> default provider key.
@@ -39,6 +39,18 @@ if ! python3 -c 'import json,sys; sys.exit(0 if any(m.get("id")==sys.argv[1] for
     echo "!! model '$MID' not found on $LMSTUDIO_HOST:$LMSTUDIO_PORT. Available:" >&2
     python3 -c 'import json,sys; [print("   ", m["id"]) for m in sorted(json.loads(sys.argv[1])["data"], key=lambda m: m["id"])]' "$MODELS_JSON" >&2
     exit 1
+fi
+# auto-derive the real engine context window (llama-swap reports context_length per model;
+# a too-large CTX causes overflow-compactions mid-session which corrupt batch bookkeeping)
+if [[ -z "$CTX" ]]; then
+    CTX="$(python3 -c 'import json,sys
+ms=[m for m in json.loads(sys.argv[2])["data"] if m.get("id")==sys.argv[1]]
+print(ms[0].get("context_length") or ms[0].get("context_window") or "")' "$MID" "$MODELS_JSON")"
+    if [[ -z "$CTX" ]]; then
+        echo "!! server does not report context_length for '$MID'; set BENCH_CTX=<engine ctx-size> explicitly" >&2
+        exit 1
+    fi
+    echo "=== context window: CTX=$CTX auto-detected from server for $MID (override with BENCH_CTX) ===" >&2
 fi
 
 # --- per-run scaffolding ------------------------------------------------------------------
