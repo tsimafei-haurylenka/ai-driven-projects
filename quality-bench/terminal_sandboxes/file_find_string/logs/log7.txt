@@ -1,0 +1,7 @@
+ERROR something failed
+line 800
+line 220
+ERROR something failed
+line 8
+line 299
+line 117

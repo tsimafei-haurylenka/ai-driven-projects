@@ -1,0 +1,202 @@
+[
+  {
+    "id": "term/log_404_count",
+    "answer": "153"
+  },
+  {
+    "id": "term/log_post_bytes",
+    "answer": "239191"
+  },
+  {
+    "id": "term/log_top_ip",
+    "answer": "10.0.7.77"
+  },
+  {
+    "id": "term/log_hour_peak",
+    "answer": "00"
+  },
+  {
+    "id": "term/log_5xx_endpoints",
+    "answer": "213"
+  },
+  {
+    "id": "term/log_unique_ua",
+    "answer": "15"
+  },
+  {
+    "id": "term/log_avg_size",
+    "answer": "542.25"
+  },
+  {
+    "id": "term/log_kth_size",
+    "answer": "2456"
+  },
+  {
+    "id": "term/log_emails",
+    "answer": "75"
+  },
+  {
+    "id": "term/log_status_dist",
+    "answer": "200"
+  },
+  {
+    "id": "term/csv_paid_sum",
+    "answer": "27179"
+  },
+  {
+    "id": "term/csv_age_gt30",
+    "answer": "216"
+  },
+  {
+    "id": "term/csv_max_score",
+    "answer": "99"
+  },
+  {
+    "id": "term/csv_cat_avg",
+    "answer": "c1"
+  },
+  {
+    "id": "term/csv_distinct_cat",
+    "answer": "8"
+  },
+  {
+    "id": "term/csv_revenue",
+    "answer": "51114"
+  },
+  {
+    "id": "term/csv_year2023",
+    "answer": "65"
+  },
+  {
+    "id": "term/csv_empty_email",
+    "answer": "38"
+  },
+  {
+    "id": "term/csv_top_product",
+    "answer": "p8"
+  },
+  {
+    "id": "term/csv_median",
+    "answer": "418"
+  },
+  {
+    "id": "term/json_active_count",
+    "answer": "91"
+  },
+  {
+    "id": "term/json_price_sum",
+    "answer": "10049"
+  },
+  {
+    "id": "term/json_max_rating",
+    "answer": "5"
+  },
+  {
+    "id": "term/json_distinct_tags",
+    "answer": "12"
+  },
+  {
+    "id": "term/json_avg_score",
+    "answer": "49.88"
+  },
+  {
+    "id": "term/json_shipped_ids",
+    "answer": "59"
+  },
+  {
+    "id": "term/json_nested_count",
+    "answer": "131"
+  },
+  {
+    "id": "term/json_names_unique",
+    "answer": "20"
+  },
+  {
+    "id": "term/file_count_tree",
+    "answer": "32"
+  },
+  {
+    "id": "term/file_largest",
+    "answer": "8766"
+  },
+  {
+    "id": "term/file_log_count",
+    "answer": "18"
+  },
+  {
+    "id": "term/file_total_txt",
+    "answer": "5216"
+  },
+  {
+    "id": "term/file_dupes",
+    "answer": "20"
+  },
+  {
+    "id": "term/file_empty",
+    "answer": "6"
+  },
+  {
+    "id": "term/file_find_string",
+    "answer": "24"
+  },
+  {
+    "id": "term/text_regex_count",
+    "answer": "75"
+  },
+  {
+    "id": "term/text_unique_lines",
+    "answer": "40"
+  },
+  {
+    "id": "term/text_word_count",
+    "answer": "500"
+  },
+  {
+    "id": "term/text_top_word",
+    "answer": "w0"
+  },
+  {
+    "id": "term/text_sort_middle",
+    "answer": "5536"
+  },
+  {
+    "id": "term/git_commit_count",
+    "answer": "4"
+  },
+  {
+    "id": "term/git_lines_added",
+    "answer": "19"
+  },
+  {
+    "id": "term/git_branch_name",
+    "answer": "feature-852"
+  },
+  {
+    "id": "term/git_author_commits",
+    "answer": "5"
+  },
+  {
+    "id": "term/git_files_in_commit",
+    "answer": "7"
+  },
+  {
+    "id": "term/tar_count",
+    "answer": "12"
+  },
+  {
+    "id": "term/tar_total_size",
+    "answer": "2342"
+  },
+  {
+    "id": "term/tar_extract_count",
+    "answer": "6"
+  },
+  {
+    "id": "term/script_fix",
+    "answer": "2418"
+  },
+  {
+    "id": "term/script_write",
+    "answer": "2450"
+  }
+]

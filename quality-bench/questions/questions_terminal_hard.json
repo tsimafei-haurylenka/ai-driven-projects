@@ -1,0 +1,252 @@
+[
+  {
+    "id": "term/join_vip_revenue",
+    "task": "Two CSV files: customers.csv (id,tier) and orders.csv (id,customer_id,amount).\nSum the 'amount' over all orders whose customer_id has tier == 'VIP' in customers.csv.\nWrite the total (a single integer) to out.txt.",
+    "sandbox": "join_vip_revenue"
+  },
+  {
+    "id": "term/anti_join_products",
+    "task": "products.csv has one product id per line (no header). orders.csv has one product_id\nper line (no header). Count how many products have NO orders.\nWrite that count to out.txt.",
+    "sandbox": "anti_join_products"
+  },
+  {
+    "id": "term/full_outer_keys",
+    "task": "a.txt and b.txt each contain a list of keys (one per line).\nCount the number of DISTINCT keys that appear in EITHER file (union).\nWrite that count to out.txt.",
+    "sandbox": "full_outer_keys"
+  },
+  {
+    "id": "term/max_concurrency",
+    "task": "events.log has lines '<timestamp> <event>' where event is 'login' or 'logout'.\nEvents are already sorted by timestamp. A 'login' starts a session, a 'logout' ends one.\nFind the MAXIMUM number of sessions that were active at the same time.\nWrite that number to out.txt.",
+    "sandbox": "max_concurrency"
+  },
+  {
+    "id": "term/tar_then_count",
+    "task": "stage1.tar contains a directory with .txt files. Extract it, then count how many\nfiles contain the word 'SECRET'. Write that count to out.txt.",
+    "sandbox": "tar_then_count"
+  },
+  {
+    "id": "term/nested_tar",
+    "task": "archive.tar contains a directory with a file inner.tar inside it.\ninner.tar contains .dat files. Count the total number of .dat files inside inner.tar.\nWrite that count to out.txt.",
+    "sandbox": "nested_tar"
+  },
+  {
+    "id": "term/git_introduced",
+    "task": "A git repository is at 'repo'. A specific string was introduced in one commit.\nFind the commit that FIRST introduced the string 'magic-9934'.\nWrite that commit's full hash to out.txt.",
+    "sandbox": "git_introduced"
+  },
+  {
+    "id": "term/git_lines_per_author",
+    "task": "A git repository is at 'repo' with commits by 'alice' and 'bob'.\nCount the total number of lines ADDED by 'alice' across all her commits.\nWrite that count to out.txt.",
+    "sandbox": "git_lines_per_author"
+  },
+  {
+    "id": "term/git_diff_commits",
+    "task": "A git repository is at 'repo'. commits.txt has two commit hashes (older first).\nCount how many lines were ADDED in the diff between those two commits.\nWrite that count to out.txt.",
+    "sandbox": "git_diff_commits"
+  },
+  {
+    "id": "term/base64_decode_count",
+    "task": "data.b64 contains a base64-encoded string. Decode it. The decoded text is a\nspace-separated list of words. Count how many DISTINCT words there are.\nWrite that count to out.txt.",
+    "sandbox": "base64_decode_count"
+  },
+  {
+    "id": "term/rot13_find",
+    "task": "encoded.txt has lines that are ROT13-encoded. Decode each line (ROT13).\nFind the line that, when decoded, starts with 'key-'. Write that decoded line to out.txt.",
+    "sandbox": "rot13_find"
+  },
+  {
+    "id": "term/hex_decode",
+    "task": "data.hex contains a hexadecimal string. Decode it to ASCII.\nWrite the decoded string to out.txt.",
+    "sandbox": "hex_decode"
+  },
+  {
+    "id": "term/fixed_width",
+    "task": "data.txt has fixed-width records: columns are name(8), age(4), salary(6).\nSum 'salary' over all rows where age > 40. Write the total to out.txt.",
+    "sandbox": "fixed_width"
+  },
+  {
+    "id": "term/quoted_csv",
+    "task": "items.csv columns: id,description,price. The description field is quoted and MAY\ncontain commas. Sum 'price' over rows where the description contains a comma.\nWrite the total to out.txt.",
+    "sandbox": "quoted_csv"
+  },
+  {
+    "id": "term/jsonl_sum",
+    "task": "data.jsonl is line-delimited JSON (one JSON object per line), each with id and val.\nSum 'val' over all lines where val > 50. Write the total to out.txt.",
+    "sandbox": "jsonl_sum"
+  },
+  {
+    "id": "term/ini_sum",
+    "task": "config.ini is an INI file with sections and 'key = value' lines.\nSum all the integer values in the section [sec4]. Write the total to out.txt.",
+    "sandbox": "ini_sum"
+  },
+  {
+    "id": "term/props_count",
+    "task": "app.properties has lines 'key = value'. Count lines where the key starts with 'db.connection'.\nWrite that count to out.txt.",
+    "sandbox": "props_count"
+  },
+  {
+    "id": "term/env_count",
+    "task": ".env has lines. Some are 'export NAME=value', some are comments (#).\nCount the lines that start with 'export '. Write that count to out.txt.",
+    "sandbox": "env_count"
+  },
+  {
+    "id": "term/dockerfile_layers",
+    "task": "Dockerfile has instructions. Count how many RUN instructions there are.\nWrite that count to out.txt.",
+    "sandbox": "dockerfile_layers"
+  },
+  {
+    "id": "term/url_domain",
+    "task": "urls.txt has one URL per line. Find the domain (host) that appears MOST often.\nWrite that domain to out.txt.",
+    "sandbox": "url_domain"
+  },
+  {
+    "id": "term/dns_zone",
+    "task": "zone.txt has DNS records: '<name> <ttl> IN <type> <data>'.\nFind the record type (4th field) that appears MOST often. Write it to out.txt.",
+    "sandbox": "dns_zone"
+  },
+  {
+    "id": "term/fw_blocked",
+    "task": "fw.log has lines '<ip> <action> port <port>'.\nCount how many DISTINCT IPs were BLOCKED. Write that count to out.txt.",
+    "sandbox": "fw_blocked"
+  },
+  {
+    "id": "term/word_tiebreak",
+    "task": "corpus.txt is a line of space-separated words. Find the most frequent word.\nIf there is a tie, pick the one that comes FIRST alphabetically.\nWrite that word to out.txt.",
+    "sandbox": "word_tiebreak"
+  },
+  {
+    "id": "term/longest_line",
+    "task": "lines.txt has many lines of varying length. Find the length (in characters) of the\nLONGEST line. Write that number to out.txt.",
+    "sandbox": "longest_line"
+  },
+  {
+    "id": "term/file_intersection",
+    "task": "a.txt and b.txt each have a list of values (one per line).\nCount how many values appear in BOTH files (intersection). Write that count to out.txt.",
+    "sandbox": "file_intersection"
+  },
+  {
+    "id": "term/sym_diff",
+    "task": "a.txt and b.txt each have a list of values (one per line).\nCount how many values appear in EXACTLY ONE of the two files (symmetric difference).\nWrite that count to out.txt.",
+    "sandbox": "sym_diff"
+  },
+  {
+    "id": "term/natural_sort",
+    "task": "In the directory 'files' there are files named file<N>.txt.\nSort them by NATURAL order (by the number N, not lexicographically).\nWrite the 5th file in that sorted order (just the filename) to out.txt.",
+    "sandbox": "natural_sort"
+  },
+  {
+    "id": "term/version_sort",
+    "task": "versions.txt has semantic versions (X.Y.Z) one per line.\nFind the HIGHEST version (compare X, then Y, then Z numerically). Write it to out.txt.",
+    "sandbox": "version_sort"
+  },
+  {
+    "id": "term/date_latest",
+    "task": "events.txt has dates in YYYY-MM-DD format, one per line.\nFind the LATEST (most recent) date. Write it to out.txt.",
+    "sandbox": "date_latest"
+  },
+  {
+    "id": "term/merge_sorted",
+    "task": "a.txt and b.txt each contain sorted integers (one per line).\nMerge them into one sorted list. Write the 50th smallest value to out.txt.",
+    "sandbox": "merge_sorted"
+  },
+  {
+    "id": "term/every_kth",
+    "task": "nums.txt has one integer per line (100 lines, 0-indexed).\nSum the values at indices 0, 7, 14, 21, ... (every 7th line, starting from the first).\nWrite the total to out.txt.",
+    "sandbox": "every_kth"
+  },
+  {
+    "id": "term/sliding_window",
+    "task": "nums.txt has one integer per line. Find the maximum sum of any 10 CONSECUTIVE values.\nWrite that maximum sum to out.txt.",
+    "sandbox": "sliding_window"
+  },
+  {
+    "id": "term/two_sum",
+    "task": "nums.txt has one integer per line. Count the number of PAIRS (i<j) where\nnums[i] + nums[j] == 30. Write that count to out.txt.",
+    "sandbox": "two_sum"
+  },
+  {
+    "id": "term/max_subarray",
+    "task": "nums.txt has one integer per line (can be negative). Find the maximum sum of any\nCONTIGUOUS subarray. Write that maximum sum to out.txt.",
+    "sandbox": "max_subarray"
+  },
+  {
+    "id": "term/primes_count",
+    "task": "range.txt has two lines: a lower bound and an upper bound.\nCount how many PRIME numbers are in the inclusive range [lo, hi]. Write that count to out.txt.",
+    "sandbox": "primes_count"
+  },
+  {
+    "id": "term/collatz",
+    "task": "n.txt has a single integer n. Apply the Collatz sequence: if n is even, n=n/2;\nif odd, n=3n+1. Count how many steps until n reaches 1. Write that count to out.txt.",
+    "sandbox": "collatz"
+  },
+  {
+    "id": "term/gcd_list",
+    "task": "nums.txt has one integer per line. Compute the GCD (greatest common divisor) of all\nthe numbers. Write that GCD to out.txt.",
+    "sandbox": "gcd_list"
+  },
+  {
+    "id": "term/lcm_list",
+    "task": "nums.txt has one integer per line. Compute the LCM (least common multiple) of all\nthe numbers. Write that LCM to out.txt.",
+    "sandbox": "lcm_list"
+  },
+  {
+    "id": "term/roman_sum",
+    "task": "romans.txt has Roman numerals (one per line). Convert each to an integer and sum them.\nWrite the total to out.txt.",
+    "sandbox": "roman_sum"
+  },
+  {
+    "id": "term/bit_count",
+    "task": "nums.txt has one integer per line. For each number, count the number of 1-bits in its\nbinary representation. Sum those counts across all numbers. Write the total to out.txt.",
+    "sandbox": "bit_count"
+  },
+  {
+    "id": "term/xor_list",
+    "task": "nums.txt has one integer per line. Compute the XOR of all the numbers.\nWrite the result to out.txt.",
+    "sandbox": "xor_list"
+  },
+  {
+    "id": "term/paren_depth",
+    "task": "code.txt has a single line of code with parentheses.\nFind the MAXIMUM nesting depth of parentheses. Write that depth to out.txt.",
+    "sandbox": "paren_depth"
+  },
+  {
+    "id": "term/rpn_eval",
+    "task": "expr.txt has a Reverse Polish Notation (RPN) expression: '<a> <b> <op1> <c> <op2>'.\nEvaluate it (it computes ((a op1 b) op2 c)). Write the integer result to out.txt.",
+    "sandbox": "rpn_eval"
+  },
+  {
+    "id": "term/anagram_groups",
+    "task": "words.txt has one word per line. Two words are anagrams if they have the same letters.\nCount how many ANAGRAM GROUPS there are (a group = 2+ words that are anagrams of each other).\nWrite that count to out.txt.",
+    "sandbox": "anagram_groups"
+  },
+  {
+    "id": "term/missing_number",
+    "task": "nums.txt has one integer per line. The numbers should be 1 to N with exactly ONE\nnumber missing. Find the missing number. Write it to out.txt.",
+    "sandbox": "missing_number"
+  },
+  {
+    "id": "term/duplicate_number",
+    "task": "nums.txt has one integer per line. The numbers are 1 to N with exactly ONE number\nappearing TWICE. Find that duplicate number. Write it to out.txt.",
+    "sandbox": "duplicate_number"
+  },
+  {
+    "id": "term/pos_subarray",
+    "task": "nums.txt has one integer per line (can be negative). Count the number of CONTIGUOUS\nsubarrays whose sum is strictly positive (> 0). Write that count to out.txt.",
+    "sandbox": "pos_subarray"
+  },
+  {
+    "id": "term/graph_components",
+    "task": "edges.txt has lines '<a> <b>' representing undirected edges between nodes 0 to 49.\nCount the number of CONNECTED COMPONENTS in this graph. Write that count to out.txt.",
+    "sandbox": "graph_components"
+  },
+  {
+    "id": "term/bfs_shortest",
+    "task": "edges.txt has lines '<a> <b> <weight>' representing undirected weighted edges.\nNodes are 0 to 29. Find the SHORTEST PATH distance from node 0 to node 29.\nWrite that distance (or -1 if unreachable) to out.txt.",
+    "sandbox": "bfs_shortest"
+  },
+  {
+    "id": "term/multi_bug_script",
+    "task": "solve.py is SUPPOSED to print the sum of all ODD numbers in data.txt.\nIt has 3 bugs. Fix all 3, run it, and write the correct result to out.txt.",
+    "sandbox": "multi_bug_script"
+  }
+]

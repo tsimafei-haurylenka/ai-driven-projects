@@ -1,0 +1,402 @@
+[
+  {
+    "id": 247,
+    "input": "Question: Kandi tells the truth. Ryan says Kandi lies. Michaela says Ryan tells the truth. Sima says Michaela lies. Andree says Sima tells the truth. Does Andree tell the truth?"
+  },
+  {
+    "id": 199,
+    "input": "Question: Kristian lies. Millie says Kristian lies. Amberly says Millie lies. Osvaldo says Amberly tells the truth. Kandi says Osvaldo tells the truth. Does Kandi tell the truth?"
+  },
+  {
+    "id": 112,
+    "input": "Question: Crista tells the truth. Jim says Crista lies. Delfina says Jim lies. Phoebe says Delfina lies. Bernita says Phoebe tells the truth. Does Bernita tell the truth?"
+  },
+  {
+    "id": 29,
+    "input": "Question: Shalonda lies. Jaymie says Shalonda tells the truth. Raymond says Jaymie lies. Audrie says Raymond lies. Sherrie says Audrie lies. Does Sherrie tell the truth?"
+  },
+  {
+    "id": 1,
+    "input": "Question: Kristian lies. Sherrie says Kristian lies. Delbert says Sherrie lies. Jerry says Delbert tells the truth. Shalonda says Jerry tells the truth. Does Shalonda tell the truth?"
+  },
+  {
+    "id": 23,
+    "input": "Question: Phoebe tells the truth. Christie says Phoebe tells the truth. Fletcher says Christie tells the truth. Amberly says Fletcher lies. Raymond says Amberly tells the truth. Does Raymond tell the truth?"
+  },
+  {
+    "id": 233,
+    "input": "Question: Fidel tells the truth. Teressa says Fidel tells the truth. Willian says Teressa tells the truth. Conception says Willian tells the truth. Bernita says Conception lies. Does Bernita tell the truth?"
+  },
+  {
+    "id": 241,
+    "input": "Question: Shaunda lies. Andree says Shaunda tells the truth. Jaymie says Andree lies. Inga says Jaymie lies. Millicent says Inga tells the truth. Does Millicent tell the truth?"
+  },
+  {
+    "id": 240,
+    "input": "Question: Fletcher lies. Tamika says Fletcher tells the truth. Ka says Tamika lies. Sima says Ka tells the truth. Ryan says Sima tells the truth. Does Ryan tell the truth?"
+  },
+  {
+    "id": 206,
+    "input": "Question: Vernell lies. Conception says Vernell lies. Kandi says Conception lies. Michael says Kandi tells the truth. Osvaldo says Michael tells the truth. Does Osvaldo tell the truth?"
+  },
+  {
+    "id": 149,
+    "input": "Question: Teressa tells the truth. Lorine says Teressa lies. Antwan says Lorine tells the truth. Fidel says Antwan tells the truth. Phoebe says Fidel lies. Does Phoebe tell the truth?"
+  },
+  {
+    "id": 8,
+    "input": "Question: Fletcher tells the truth. Conception says Fletcher tells the truth. Bernita says Conception tells the truth. Jamey says Bernita tells the truth. Teressa says Jamey lies. Does Teressa tell the truth?"
+  },
+  {
+    "id": 171,
+    "input": "Question: Shenna lies. Crista says Shenna lies. Andree says Crista tells the truth. Sherrie says Andree lies. Ka says Sherrie lies. Does Ka tell the truth?"
+  },
+  {
+    "id": 177,
+    "input": "Question: Millicent lies. Lorine says Millicent lies. Rashida says Lorine lies. Sima says Rashida lies. Phoebe says Sima tells the truth. Does Phoebe tell the truth?"
+  },
+  {
+    "id": 21,
+    "input": "Question: Ryan tells the truth. Sal says Ryan tells the truth. Leda says Sal tells the truth. Rashida says Leda tells the truth. Alejandro says Rashida tells the truth. Does Alejandro tell the truth?"
+  },
+  {
+    "id": 25,
+    "input": "Question: Amberly tells the truth. Jamey says Amberly tells the truth. Shalonda says Jamey lies. Antwan says Shalonda tells the truth. Alejandro says Antwan lies. Does Alejandro tell the truth?"
+  },
+  {
+    "id": 196,
+    "input": "Question: Sal tells the truth. Alejandro says Sal tells the truth. Raymond says Alejandro lies. Conception says Raymond lies. Elanor says Conception lies. Does Elanor tell the truth?"
+  },
+  {
+    "id": 90,
+    "input": "Question: Jamey lies. Gwenn says Jamey tells the truth. Yoland says Gwenn tells the truth. Kandi says Yoland tells the truth. Osvaldo says Kandi tells the truth. Does Osvaldo tell the truth?"
+  },
+  {
+    "id": 60,
+    "input": "Question: Delbert tells the truth. Delfina says Delbert lies. Antwan says Delfina tells the truth. Helene says Antwan lies. Sima says Helene lies. Does Sima tell the truth?"
+  },
+  {
+    "id": 4,
+    "input": "Question: Tamika lies. Raymond says Tamika tells the truth. Willian says Raymond tells the truth. Shaunda says Willian lies. Elanor says Shaunda tells the truth. Does Elanor tell the truth?"
+  },
+  {
+    "id": 7,
+    "input": "Question: Jim lies. Crista says Jim lies. Vernell says Crista tells the truth. Bernita says Vernell tells the truth. Millicent says Bernita tells the truth. Does Millicent tell the truth?"
+  },
+  {
+    "id": 201,
+    "input": "Question: Jamey tells the truth. Michael says Jamey lies. Sherrie says Michael lies. Bernita says Sherrie lies. Amberly says Bernita tells the truth. Does Amberly tell the truth?"
+  },
+  {
+    "id": 230,
+    "input": "Question: Jamey lies. Sal says Jamey tells the truth. Teressa says Sal lies. Maybelle says Teressa tells the truth. Ka says Maybelle lies. Does Ka tell the truth?"
+  },
+  {
+    "id": 88,
+    "input": "Question: Helene tells the truth. Lorine says Helene lies. Raymond says Lorine tells the truth. Ka says Raymond tells the truth. Christie says Ka tells the truth. Does Christie tell the truth?"
+  },
+  {
+    "id": 165,
+    "input": "Question: Shaunda lies. Elanor says Shaunda lies. Fidel says Elanor tells the truth. Lorine says Fidel tells the truth. Raymond says Lorine lies. Does Raymond tell the truth?"
+  },
+  {
+    "id": 159,
+    "input": "Question: Elanor lies. Millicent says Elanor tells the truth. Millie says Millicent lies. Michaela says Millie tells the truth. Kandi says Michaela lies. Does Kandi tell the truth?"
+  },
+  {
+    "id": 123,
+    "input": "Question: Bernita lies. Jerry says Bernita tells the truth. Delbert says Jerry lies. Jamey says Delbert tells the truth. Shenna says Jamey lies. Does Shenna tell the truth?"
+  },
+  {
+    "id": 157,
+    "input": "Question: Delfina tells the truth. Fidel says Delfina tells the truth. Helene says Fidel lies. Crista says Helene lies. Ka says Crista lies. Does Ka tell the truth?"
+  },
+  {
+    "id": 118,
+    "input": "Question: Vernell lies. Michael says Vernell lies. Dallas says Michael lies. Shalonda says Dallas tells the truth. Jamey says Shalonda lies. Does Jamey tell the truth?"
+  },
+  {
+    "id": 38,
+    "input": "Question: Maybelle lies. Jamey says Maybelle tells the truth. Phoebe says Jamey lies. Willian says Phoebe lies. Shalonda says Willian lies. Does Shalonda tell the truth?"
+  },
+  {
+    "id": 244,
+    "input": "Question: Shaunda tells the truth. Phoebe says Shaunda tells the truth. Ryan says Phoebe tells the truth. Christie says Ryan tells the truth. Vina says Christie tells the truth. Does Vina tell the truth?"
+  },
+  {
+    "id": 46,
+    "input": "Question: Millie tells the truth. Millicent says Millie tells the truth. Raymond says Millicent tells the truth. Crista says Raymond lies. Ka says Crista tells the truth. Does Ka tell the truth?"
+  },
+  {
+    "id": 182,
+    "input": "Question: Shaunda lies. Fletcher says Shaunda lies. Jaymie says Fletcher lies. Millie says Jaymie lies. Gwenn says Millie tells the truth. Does Gwenn tell the truth?"
+  },
+  {
+    "id": 246,
+    "input": "Question: Gwenn lies. Maybelle says Gwenn tells the truth. Raymond says Maybelle tells the truth. Jamey says Raymond tells the truth. Andree says Jamey lies. Does Andree tell the truth?"
+  },
+  {
+    "id": 3,
+    "input": "Question: Christie tells the truth. Ka says Christie tells the truth. Delbert says Ka lies. Leda says Delbert tells the truth. Lorine says Leda tells the truth. Does Lorine tell the truth?"
+  },
+  {
+    "id": 128,
+    "input": "Question: Helene tells the truth. Teressa says Helene tells the truth. Jamey says Teressa lies. Alexis says Jamey lies. Osvaldo says Alexis tells the truth. Does Osvaldo tell the truth?"
+  },
+  {
+    "id": 124,
+    "input": "Question: Willian tells the truth. Phoebe says Willian lies. Alejandro says Phoebe lies. Lorine says Alejandro tells the truth. Christie says Lorine tells the truth. Does Christie tell the truth?"
+  },
+  {
+    "id": 63,
+    "input": "Question: Jerry tells the truth. Elanor says Jerry tells the truth. Gwenn says Elanor tells the truth. Kandi says Gwenn tells the truth. Dallas says Kandi tells the truth. Does Dallas tell the truth?"
+  },
+  {
+    "id": 16,
+    "input": "Question: Ka lies. Christie says Ka tells the truth. Jerry says Christie lies. Crista says Jerry lies. Yoland says Crista tells the truth. Does Yoland tell the truth?"
+  },
+  {
+    "id": 170,
+    "input": "Question: Alejandro lies. Bernita says Alejandro lies. Andree says Bernita tells the truth. Sima says Andree tells the truth. Inga says Sima tells the truth. Does Inga tell the truth?"
+  },
+  {
+    "id": 138,
+    "input": "Question: Helene tells the truth. Raymond says Helene lies. Andree says Raymond tells the truth. Michael says Andree tells the truth. Amberly says Michael tells the truth. Does Amberly tell the truth?"
+  },
+  {
+    "id": 119,
+    "input": "Question: Jim tells the truth. Ryan says Jim tells the truth. Millicent says Ryan tells the truth. Audrie says Millicent tells the truth. Elanor says Audrie tells the truth. Does Elanor tell the truth?"
+  },
+  {
+    "id": 17,
+    "input": "Question: Ka lies. Andree says Ka tells the truth. Audrie says Andree lies. Antwan says Audrie tells the truth. Millie says Antwan tells the truth. Does Millie tell the truth?"
+  },
+  {
+    "id": 153,
+    "input": "Question: Helene tells the truth. Leda says Helene lies. Antwan says Leda tells the truth. Andree says Antwan lies. Shaunda says Andree lies. Does Shaunda tell the truth?"
+  },
+  {
+    "id": 172,
+    "input": "Question: Antwan lies. Jerry says Antwan tells the truth. Delfina says Jerry lies. Conception says Delfina lies. Bernita says Conception tells the truth. Does Bernita tell the truth?"
+  },
+  {
+    "id": 22,
+    "input": "Question: Sima lies. Millie says Sima tells the truth. Jerry says Millie tells the truth. Vina says Jerry lies. Maybelle says Vina tells the truth. Does Maybelle tell the truth?"
+  },
+  {
+    "id": 131,
+    "input": "Question: Christie tells the truth. Elanor says Christie lies. Jaymie says Elanor tells the truth. Jamey says Jaymie lies. Alexis says Jamey tells the truth. Does Alexis tell the truth?"
+  },
+  {
+    "id": 148,
+    "input": "Question: Willian tells the truth. Michaela says Willian tells the truth. Sima says Michaela lies. Inga says Sima tells the truth. Audrie says Inga lies. Does Audrie tell the truth?"
+  },
+  {
+    "id": 11,
+    "input": "Question: Audrie lies. Conception says Audrie lies. Teressa says Conception tells the truth. Delfina says Teressa lies. Helene says Delfina tells the truth. Does Helene tell the truth?"
+  },
+  {
+    "id": 69,
+    "input": "Question: Phoebe tells the truth. Jamey says Phoebe lies. Audrie says Jamey tells the truth. Michaela says Audrie lies. Vina says Michaela lies. Does Vina tell the truth?"
+  },
+  {
+    "id": 142,
+    "input": "Question: Millie lies. Jaymie says Millie tells the truth. Jamey says Jaymie tells the truth. Sal says Jamey lies. Christie says Sal lies. Does Christie tell the truth?"
+  },
+  {
+    "id": 211,
+    "input": "Question: Fletcher tells the truth. Willian says Fletcher tells the truth. Jamey says Willian lies. Leda says Jamey lies. Jaymie says Leda tells the truth. Does Jaymie tell the truth?"
+  },
+  {
+    "id": 225,
+    "input": "Question: Sherrie lies. Elanor says Sherrie tells the truth. Michael says Elanor tells the truth. Sima says Michael tells the truth. Shaunda says Sima lies. Does Shaunda tell the truth?"
+  },
+  {
+    "id": 77,
+    "input": "Question: Ryan tells the truth. Helene says Ryan tells the truth. Kandi says Helene tells the truth. Inga says Kandi tells the truth. Delbert says Inga lies. Does Delbert tell the truth?"
+  },
+  {
+    "id": 223,
+    "input": "Question: Antwan tells the truth. Elanor says Antwan tells the truth. Bernita says Elanor tells the truth. Osvaldo says Bernita lies. Christie says Osvaldo tells the truth. Does Christie tell the truth?"
+  },
+  {
+    "id": 232,
+    "input": "Question: Alexis tells the truth. Elanor says Alexis tells the truth. Sherrie says Elanor lies. Audrie says Sherrie tells the truth. Inga says Audrie tells the truth. Does Inga tell the truth?"
+  },
+  {
+    "id": 68,
+    "input": "Question: Fidel lies. Michael says Fidel lies. Fletcher says Michael lies. Inga says Fletcher tells the truth. Andree says Inga lies. Does Andree tell the truth?"
+  },
+  {
+    "id": 212,
+    "input": "Question: Tamika lies. Jerry says Tamika tells the truth. Delbert says Jerry tells the truth. Leda says Delbert tells the truth. Willian says Leda lies. Does Willian tell the truth?"
+  },
+  {
+    "id": 167,
+    "input": "Question: Shenna tells the truth. Antwan says Shenna lies. Tamika says Antwan lies. Elanor says Tamika lies. Rashida says Elanor tells the truth. Does Rashida tell the truth?"
+  },
+  {
+    "id": 51,
+    "input": "Question: Elanor tells the truth. Ka says Elanor lies. Delbert says Ka tells the truth. Michaela says Delbert lies. Sherrie says Michaela lies. Does Sherrie tell the truth?"
+  },
+  {
+    "id": 116,
+    "input": "Question: Conception lies. Rashida says Conception tells the truth. Alejandro says Rashida tells the truth. Sherrie says Alejandro lies. Amberly says Sherrie tells the truth. Does Amberly tell the truth?"
+  },
+  {
+    "id": 135,
+    "input": "Question: Osvaldo lies. Gwenn says Osvaldo lies. Michael says Gwenn lies. Elanor says Michael lies. Sal says Elanor tells the truth. Does Sal tell the truth?"
+  },
+  {
+    "id": 210,
+    "input": "Question: Andree tells the truth. Christie says Andree tells the truth. Fidel says Christie lies. Antwan says Fidel tells the truth. Alejandro says Antwan lies. Does Alejandro tell the truth?"
+  },
+  {
+    "id": 227,
+    "input": "Question: Helene lies. Delfina says Helene lies. Christie says Delfina tells the truth. Jerry says Christie lies. Tamika says Jerry tells the truth. Does Tamika tell the truth?"
+  },
+  {
+    "id": 130,
+    "input": "Question: Lorine lies. Osvaldo says Lorine lies. Alejandro says Osvaldo lies. Gwenn says Alejandro tells the truth. Dallas says Gwenn lies. Does Dallas tell the truth?"
+  },
+  {
+    "id": 18,
+    "input": "Question: Shalonda tells the truth. Alexis says Shalonda tells the truth. Christie says Alexis lies. Inga says Christie tells the truth. Crista says Inga tells the truth. Does Crista tell the truth?"
+  },
+  {
+    "id": 245,
+    "input": "Question: Alexis tells the truth. Amberly says Alexis tells the truth. Andree says Amberly tells the truth. Vina says Andree tells the truth. Helene says Vina tells the truth. Does Helene tell the truth?"
+  },
+  {
+    "id": 85,
+    "input": "Question: Bernita tells the truth. Audrie says Bernita lies. Delfina says Audrie tells the truth. Vina says Delfina lies. Sal says Vina tells the truth. Does Sal tell the truth?"
+  },
+  {
+    "id": 36,
+    "input": "Question: Fidel lies. Fletcher says Fidel tells the truth. Yoland says Fletcher lies. Raymond says Yoland lies. Leda says Raymond lies. Does Leda tell the truth?"
+  },
+  {
+    "id": 121,
+    "input": "Question: Alejandro tells the truth. Shenna says Alejandro tells the truth. Christie says Shenna tells the truth. Shalonda says Christie lies. Jerry says Shalonda lies. Does Jerry tell the truth?"
+  },
+  {
+    "id": 168,
+    "input": "Question: Andree lies. Rashida says Andree tells the truth. Amberly says Rashida lies. Tamika says Amberly lies. Leda says Tamika lies. Does Leda tell the truth?"
+  },
+  {
+    "id": 96,
+    "input": "Question: Sima tells the truth. Teressa says Sima tells the truth. Vina says Teressa lies. Crista says Vina lies. Phoebe says Crista tells the truth. Does Phoebe tell the truth?"
+  },
+  {
+    "id": 42,
+    "input": "Question: Jaymie tells the truth. Millicent says Jaymie lies. Millie says Millicent tells the truth. Vina says Millie lies. Leda says Vina tells the truth. Does Leda tell the truth?"
+  },
+  {
+    "id": 13,
+    "input": "Question: Inga tells the truth. Shenna says Inga lies. Rashida says Shenna tells the truth. Ka says Rashida tells the truth. Shalonda says Ka tells the truth. Does Shalonda tell the truth?"
+  },
+  {
+    "id": 19,
+    "input": "Question: Fidel lies. Sal says Fidel tells the truth. Osvaldo says Sal lies. Alexis says Osvaldo lies. Millie says Alexis tells the truth. Does Millie tell the truth?"
+  },
+  {
+    "id": 150,
+    "input": "Question: Elanor tells the truth. Crista says Elanor lies. Vernell says Crista lies. Shalonda says Vernell lies. Teressa says Shalonda lies. Does Teressa tell the truth?"
+  },
+  {
+    "id": 127,
+    "input": "Question: Christie lies. Jaymie says Christie lies. Lorine says Jaymie tells the truth. Bernita says Lorine tells the truth. Delfina says Bernita lies. Does Delfina tell the truth?"
+  },
+  {
+    "id": 41,
+    "input": "Question: Fidel tells the truth. Kandi says Fidel lies. Christie says Kandi tells the truth. Leda says Christie lies. Sima says Leda lies. Does Sima tell the truth?"
+  },
+  {
+    "id": 175,
+    "input": "Question: Sherrie lies. Gwenn says Sherrie lies. Sima says Gwenn lies. Tamika says Sima tells the truth. Millicent says Tamika tells the truth. Does Millicent tell the truth?"
+  },
+  {
+    "id": 248,
+    "input": "Question: Fletcher tells the truth. Alexis says Fletcher lies. Jerry says Alexis lies. Elanor says Jerry tells the truth. Jim says Elanor lies. Does Jim tell the truth?"
+  },
+  {
+    "id": 55,
+    "input": "Question: Kandi tells the truth. Alejandro says Kandi tells the truth. Millicent says Alejandro lies. Shalonda says Millicent lies. Conception says Shalonda lies. Does Conception tell the truth?"
+  },
+  {
+    "id": 181,
+    "input": "Question: Millicent tells the truth. Ka says Millicent tells the truth. Conception says Ka lies. Sal says Conception lies. Tamika says Sal lies. Does Tamika tell the truth?"
+  },
+  {
+    "id": 6,
+    "input": "Question: Shalonda lies. Teressa says Shalonda tells the truth. Tamika says Teressa lies. Lorine says Tamika tells the truth. Jaymie says Lorine lies. Does Jaymie tell the truth?"
+  },
+  {
+    "id": 226,
+    "input": "Question: Tamika lies. Conception says Tamika tells the truth. Kristian says Conception lies. Alejandro says Kristian tells the truth. Shaunda says Alejandro lies. Does Shaunda tell the truth?"
+  },
+  {
+    "id": 28,
+    "input": "Question: Ryan lies. Kristian says Ryan lies. Teressa says Kristian tells the truth. Amberly says Teressa tells the truth. Jamey says Amberly tells the truth. Does Jamey tell the truth?"
+  },
+  {
+    "id": 188,
+    "input": "Question: Rashida tells the truth. Jim says Rashida lies. Tamika says Jim tells the truth. Lorine says Tamika tells the truth. Vina says Lorine tells the truth. Does Vina tell the truth?"
+  },
+  {
+    "id": 179,
+    "input": "Question: Shaunda tells the truth. Conception says Shaunda lies. Shenna says Conception lies. Delbert says Shenna lies. Jerry says Delbert tells the truth. Does Jerry tell the truth?"
+  },
+  {
+    "id": 78,
+    "input": "Question: Ryan lies. Christie says Ryan lies. Amberly says Christie tells the truth. Shenna says Amberly tells the truth. Jamey says Shenna lies. Does Jamey tell the truth?"
+  },
+  {
+    "id": 189,
+    "input": "Question: Delbert lies. Shalonda says Delbert tells the truth. Tamika says Shalonda lies. Sal says Tamika lies. Helene says Sal lies. Does Helene tell the truth?"
+  },
+  {
+    "id": 10,
+    "input": "Question: Jerry lies. Millicent says Jerry tells the truth. Sal says Millicent tells the truth. Amberly says Sal tells the truth. Shenna says Amberly lies. Does Shenna tell the truth?"
+  },
+  {
+    "id": 106,
+    "input": "Question: Elanor tells the truth. Leda says Elanor lies. Osvaldo says Leda tells the truth. Jim says Osvaldo lies. Gwenn says Jim lies. Does Gwenn tell the truth?"
+  },
+  {
+    "id": 70,
+    "input": "Question: Kandi lies. Phoebe says Kandi tells the truth. Yoland says Phoebe tells the truth. Fletcher says Yoland lies. Lorine says Fletcher tells the truth. Does Lorine tell the truth?"
+  },
+  {
+    "id": 160,
+    "input": "Question: Jerry tells the truth. Yoland says Jerry lies. Tamika says Yoland tells the truth. Alexis says Tamika tells the truth. Ryan says Alexis tells the truth. Does Ryan tell the truth?"
+  },
+  {
+    "id": 45,
+    "input": "Question: Sima tells the truth. Yoland says Sima lies. Amberly says Yoland tells the truth. Inga says Amberly lies. Alexis says Inga tells the truth. Does Alexis tell the truth?"
+  },
+  {
+    "id": 200,
+    "input": "Question: Willian lies. Raymond says Willian tells the truth. Rashida says Raymond lies. Gwenn says Rashida lies. Ka says Gwenn lies. Does Ka tell the truth?"
+  },
+  {
+    "id": 39,
+    "input": "Question: Jamey lies. Vernell says Jamey tells the truth. Millicent says Vernell lies. Rashida says Millicent tells the truth. Vina says Rashida tells the truth. Does Vina tell the truth?"
+  },
+  {
+    "id": 76,
+    "input": "Question: Conception tells the truth. Teressa says Conception lies. Sal says Teressa tells the truth. Fidel says Sal tells the truth. Shenna says Fidel lies. Does Shenna tell the truth?"
+  },
+  {
+    "id": 154,
+    "input": "Question: Sherrie tells the truth. Kandi says Sherrie tells the truth. Conception says Kandi tells the truth. Michael says Conception tells the truth. Christie says Michael tells the truth. Does Christie tell the truth?"
+  },
+  {
+    "id": 221,
+    "input": "Question: Antwan tells the truth. Audrie says Antwan tells the truth. Inga says Audrie lies. Shenna says Inga tells the truth. Christie says Shenna lies. Does Christie tell the truth?"
+  },
+  {
+    "id": 222,
+    "input": "Question: Teressa lies. Michael says Teressa tells the truth. Fidel says Michael tells the truth. Leda says Fidel lies. Lorine says Leda lies. Does Lorine tell the truth?"
+  }
+]

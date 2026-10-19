@@ -1,0 +1,101 @@
+id,description,price
+0,"item 7, variant 5",99
+1,"item 18",56
+2,"item 9",33
+3,"item 16",24
+4,"item 15, variant 0",46
+5,"item 20",42
+6,"item 3, variant 0",28
+7,"item 10, variant 3",89
+8,"item 17",51
+9,"item 2",10
+10,"item 15",26
+11,"item 13, variant 2",57
+12,"item 17",54
+13,"item 0, variant 1",55
+14,"item 2, variant 5",19
+15,"item 14, variant 3",72
+16,"item 18, variant 4",62
+17,"item 11, variant 2",96
+18,"item 19",86
+19,"item 9, variant 0",43
+20,"item 14",45
+21,"item 20, variant 3",41
+22,"item 3",47
+23,"item 11",81
+24,"item 4, variant 1",9
+25,"item 10",23
+26,"item 3, variant 0",80
+27,"item 3, variant 2",64
+28,"item 3",81
+29,"item 11, variant 2",82
+30,"item 11, variant 1",79
+31,"item 17",67
+32,"item 6, variant 3",72
+33,"item 10, variant 3",97
+34,"item 14",22
+35,"item 6, variant 2",56
+36,"item 1",51
+37,"item 7, variant 1",60
+38,"item 20",81
+39,"item 11",86
+40,"item 11, variant 0",55
+41,"item 6",92
+42,"item 7, variant 0",58
+43,"item 15",69
+44,"item 4, variant 4",71
+45,"item 6, variant 2",34
+46,"item 6",77
+47,"item 1, variant 5",76
+48,"item 11, variant 1",26
+49,"item 15, variant 2",74
+50,"item 3",13
+51,"item 20, variant 4",71
+52,"item 5",32
+53,"item 4, variant 3",40
+54,"item 11, variant 3",3
+55,"item 18",4
+56,"item 9",37
+57,"item 6",67
+58,"item 16",41
+59,"item 2, variant 2",60
+60,"item 13",58
+61,"item 17, variant 0",61
+62,"item 6, variant 1",87
+63,"item 17, variant 0",6
+64,"item 18",65
+65,"item 1, variant 0",3
+66,"item 0, variant 1",43
+67,"item 15",82
+68,"item 3, variant 1",25
+69,"item 14",70
+70,"item 6, variant 2",14
+71,"item 19, variant 4",43
+72,"item 11, variant 5",4
+73,"item 15, variant 1",54
+74,"item 6",19
+75,"item 16",59
+76,"item 1",99
+77,"item 6, variant 4",98
+78,"item 1",38
+79,"item 4",63
+80,"item 18, variant 4",18
+81,"item 19",8
+82,"item 0",11
+83,"item 15, variant 4",87
+84,"item 17",2
+85,"item 17",66
+86,"item 0",79
+87,"item 19",56
+88,"item 17",99
+89,"item 8",42
+90,"item 15, variant 2",69
+91,"item 18, variant 4",44
+92,"item 0, variant 0",88
+93,"item 11, variant 0",59
+94,"item 8, variant 2",88
+95,"item 3",36
+96,"item 4, variant 3",74
+97,"item 19, variant 2",30
+98,"item 14, variant 1",23
+99,"item 16, variant 3",30

@@ -1,0 +1,6 @@
+line 408
+line 697
+ERROR something failed
+line 251
+line 992
+ERROR something failed

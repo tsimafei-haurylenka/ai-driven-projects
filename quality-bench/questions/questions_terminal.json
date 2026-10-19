@@ -1,0 +1,252 @@
+[
+  {
+    "id": "term/log_404_count",
+    "task": "Count how many lines in access.log have HTTP status code 404.\nWrite the count (a single integer) to out.txt.",
+    "sandbox": "log_404_count"
+  },
+  {
+    "id": "term/log_post_bytes",
+    "task": "Sum the last field (bytes) of all lines in access.log whose HTTP method is POST.\nWrite the total (a single integer) to out.txt.",
+    "sandbox": "log_post_bytes"
+  },
+  {
+    "id": "term/log_top_ip",
+    "task": "Find the IP address (first field) that appears most often in access.log.\nWrite that IP (a single line) to out.txt.",
+    "sandbox": "log_top_ip"
+  },
+  {
+    "id": "term/log_hour_peak",
+    "task": "Requests are logged with a timestamp [..:HH:MM:SS ..]. Find the hour HH (00-23)\nwith the most requests in access.log. Write that hour as a two-digit number to out.txt.",
+    "sandbox": "log_hour_peak"
+  },
+  {
+    "id": "term/log_5xx_endpoints",
+    "task": "Count the total number of requests in access.log whose status code is 500 or higher.\nWrite that count (a single integer) to out.txt.",
+    "sandbox": "log_5xx_endpoints"
+  },
+  {
+    "id": "term/log_unique_ua",
+    "task": "Each line ends with a quoted user-agent. Count how many DISTINCT user-agents appear\nin access.log. Write that count (a single integer) to out.txt.",
+    "sandbox": "log_unique_ua"
+  },
+  {
+    "id": "term/log_avg_size",
+    "task": "Compute the average (mean) of the last field (bytes) across all lines of access.log.\nWrite it rounded to 2 decimal places to out.txt (e.g. 123.45).",
+    "sandbox": "log_avg_size"
+  },
+  {
+    "id": "term/log_kth_size",
+    "task": "Look at the last field (bytes) of each line in access.log. Find the 5th SMALLEST value.\nWrite that value (a single integer) to out.txt.",
+    "sandbox": "log_kth_size"
+  },
+  {
+    "id": "term/log_emails",
+    "task": "auth.log has one line per login: 'login from <email> ok'.\nCount how many DISTINCT email addresses appear. Write that count to out.txt.",
+    "sandbox": "log_emails"
+  },
+  {
+    "id": "term/log_status_dist",
+    "task": "Each line ends with '<status> <size>'. The HTTP status code is the SECOND-TO-LAST field\n(the number just before the final size field). Find the status code that appears MOST\noften in access.log. Write that status code (a single integer) to out.txt.",
+    "sandbox": "log_status_dist"
+  },
+  {
+    "id": "term/csv_paid_sum",
+    "task": "orders.csv columns: id,item,status,amount (header row included).\nSum the 'amount' column over all rows where status == 'paid'.\nWrite the total (a single integer) to out.txt.",
+    "sandbox": "csv_paid_sum"
+  },
+  {
+    "id": "term/csv_age_gt30",
+    "task": "people.csv columns: id,name,age (header included).\nCount rows where age > 30. Write that count to out.txt.",
+    "sandbox": "csv_age_gt30"
+  },
+  {
+    "id": "term/csv_max_score",
+    "task": "scores.csv columns: name,score (header included).\nFind the row with the highest score. Write that score (a single integer) to out.txt.",
+    "sandbox": "csv_max_score"
+  },
+  {
+    "id": "term/csv_cat_avg",
+    "task": "items.csv columns: cat,price (header included).\nFor each cat, compute the average price. Find the cat with the HIGHEST average.\nWrite that cat name (a single line) to out.txt.",
+    "sandbox": "csv_cat_avg"
+  },
+  {
+    "id": "term/csv_distinct_cat",
+    "task": "items.csv columns: cat,price (header included).\nCount how many DISTINCT cat values appear. Write that count to out.txt.",
+    "sandbox": "csv_distinct_cat"
+  },
+  {
+    "id": "term/csv_revenue",
+    "task": "sales.csv columns: product,qty,price (header included).\nCompute total revenue = sum over all rows of (qty * price).\nWrite the total (a single integer) to out.txt.",
+    "sandbox": "csv_revenue"
+  },
+  {
+    "id": "term/csv_year2023",
+    "task": "events.csv columns: id,date (header included). date is YYYY-MM-DD.\nCount rows where the date year is 2023. Write that count to out.txt.",
+    "sandbox": "csv_year2023"
+  },
+  {
+    "id": "term/csv_empty_email",
+    "task": "users.csv columns: id,email (header included). Some email fields are empty.\nCount rows where the email field is empty. Write that count to out.txt.",
+    "sandbox": "csv_empty_email"
+  },
+  {
+    "id": "term/csv_top_product",
+    "task": "sales.csv columns: product,qty (header included).\nSum qty per product. Find the product with the HIGHEST total qty.\nWrite that product name (a single line) to out.txt.",
+    "sandbox": "csv_top_product"
+  },
+  {
+    "id": "term/csv_median",
+    "task": "vals.csv columns: id,value (header included). There are 101 data rows.\nCompute the median of the 'value' column. Write that value (a single integer) to out.txt.",
+    "sandbox": "csv_median"
+  },
+  {
+    "id": "term/json_active_count",
+    "task": "data.json is a JSON array of objects each with fields id and active (bool).\nCount objects where active == true. Write that count to out.txt.",
+    "sandbox": "json_active_count"
+  },
+  {
+    "id": "term/json_price_sum",
+    "task": "data.json is a JSON array of objects each with fields id and price (int).\nSum all 'price' values. Write the total (a single integer) to out.txt.",
+    "sandbox": "json_price_sum"
+  },
+  {
+    "id": "term/json_max_rating",
+    "task": "data.json is a JSON array of objects each with fields id and rating (int 1-5).\nFind the maximum rating. Write that value (a single integer) to out.txt.",
+    "sandbox": "json_max_rating"
+  },
+  {
+    "id": "term/json_distinct_tags",
+    "task": "data.json is a JSON array of objects each with fields id and tags (array of strings).\nCount how many DISTINCT tag strings appear across all objects. Write that count to out.txt.",
+    "sandbox": "json_distinct_tags"
+  },
+  {
+    "id": "term/json_avg_score",
+    "task": "data.json is a JSON array of objects each with fields id and score (int).\nCompute the average 'score'. Write it rounded to 2 decimal places to out.txt.",
+    "sandbox": "json_avg_score"
+  },
+  {
+    "id": "term/json_shipped_ids",
+    "task": "data.json is a JSON array of objects each with fields id and status.\nCount objects where status == 'shipped'. Write that count to out.txt.",
+    "sandbox": "json_shipped_ids"
+  },
+  {
+    "id": "term/json_nested_count",
+    "task": "data.json is a JSON array of objects; each has an 'items' array.\nCount the TOTAL number of items across all objects' 'items' arrays.\nWrite that count to out.txt.",
+    "sandbox": "json_nested_count"
+  },
+  {
+    "id": "term/json_names_unique",
+    "task": "data.json is a JSON array of objects each with fields id and name.\nCount how many DISTINCT 'name' values appear. Write that count to out.txt.",
+    "sandbox": "json_names_unique"
+  },
+  {
+    "id": "term/file_count_tree",
+    "task": "In the directory 'tree' (with subdirectories), count the total number of FILES\n(not directories). Write that count to out.txt.",
+    "sandbox": "file_count_tree"
+  },
+  {
+    "id": "term/file_largest",
+    "task": "In the directory 'data' there are several .bin files of different sizes.\nFind the largest file by byte size. Write its size in bytes (a single integer) to out.txt.",
+    "sandbox": "file_largest"
+  },
+  {
+    "id": "term/file_log_count",
+    "task": "In the directory 'mixed' there are files with various extensions.\nCount how many files have the .log extension. Write that count to out.txt.",
+    "sandbox": "file_log_count"
+  },
+  {
+    "id": "term/file_total_txt",
+    "task": "In the directory 'docs' there are .txt files.\nCompute the TOTAL size in bytes of all .txt files. Write that total to out.txt.",
+    "sandbox": "file_total_txt"
+  },
+  {
+    "id": "term/file_dupes",
+    "task": "In the directory 'files' there are .txt files, some with identical content.\nCount how many files have content that is DUPLICATED (i.e. at least one other file\nhas exactly the same content). Write that count to out.txt.",
+    "sandbox": "file_dupes"
+  },
+  {
+    "id": "term/file_empty",
+    "task": "In the directory 'stuff' there are .txt files, some of which are empty (0 bytes).\nCount the empty files. Write that count to out.txt.",
+    "sandbox": "file_empty"
+  },
+  {
+    "id": "term/file_find_string",
+    "task": "In the directory 'logs' there are several .txt files.\nCount the TOTAL number of lines (across all files) that contain the word 'ERROR'.\nWrite that count to out.txt.",
+    "sandbox": "file_find_string"
+  },
+  {
+    "id": "term/text_regex_count",
+    "task": "orders.txt has many lines. Count the lines that match the pattern: a line that\nstarts with 'order ' followed by exactly 4 digits. Write that count to out.txt.",
+    "sandbox": "text_regex_count"
+  },
+  {
+    "id": "term/text_unique_lines",
+    "task": "lines.txt has many lines, many repeated. Count how many DISTINCT lines there are.\nWrite that count to out.txt.",
+    "sandbox": "text_unique_lines"
+  },
+  {
+    "id": "term/text_word_count",
+    "task": "corpus.txt is a single line of space-separated words.\nCount the total number of words. Write that count to out.txt.",
+    "sandbox": "text_word_count"
+  },
+  {
+    "id": "term/text_top_word",
+    "task": "corpus.txt is a single line of space-separated words.\nFind the word that appears MOST often. Write that word (a single line) to out.txt.",
+    "sandbox": "text_top_word"
+  },
+  {
+    "id": "term/text_sort_middle",
+    "task": "nums.txt has one integer per line (99 lines).\nSort them and find the middle (median) value. Write that value to out.txt.",
+    "sandbox": "text_sort_middle"
+  },
+  {
+    "id": "term/git_commit_count",
+    "task": "A git repository is at 'repo'. Count the total number of commits on the current branch.\nWrite that count (a single integer) to out.txt.",
+    "sandbox": "git_commit_count"
+  },
+  {
+    "id": "term/git_lines_added",
+    "task": "A git repository is at 'repo' with 2 commits. Look at the LAST commit.\nCount how many lines were ADDED in that commit (git diff --stat / numstat).\nWrite that count (a single integer) to out.txt.",
+    "sandbox": "git_lines_added"
+  },
+  {
+    "id": "term/git_branch_name",
+    "task": "A git repository is at 'repo'. The repository is currently on a feature branch.\nFind the name of the CURRENT branch. Write that branch name to out.txt.",
+    "sandbox": "git_branch_name"
+  },
+  {
+    "id": "term/git_author_commits",
+    "task": "A git repository is at 'repo' with commits by two authors: 'alice' and 'bob'.\nCount how many commits were authored by 'alice'. Write that count to out.txt.",
+    "sandbox": "git_author_commits"
+  },
+  {
+    "id": "term/git_files_in_commit",
+    "task": "A git repository is at 'repo' with a single commit that added several files.\nCount how many files were added in that (only) commit. Write that count to out.txt.",
+    "sandbox": "git_files_in_commit"
+  },
+  {
+    "id": "term/tar_count",
+    "task": "A tar archive 'archive.tar' is provided. Count the total number of FILES (not dirs)\ninside the archive. Write that count to out.txt.",
+    "sandbox": "tar_count"
+  },
+  {
+    "id": "term/tar_total_size",
+    "task": "A tar archive 'archive.tar' is provided containing .txt files.\nCompute the TOTAL size in bytes of all files inside the archive. Write that to out.txt.",
+    "sandbox": "tar_total_size"
+  },
+  {
+    "id": "term/tar_extract_count",
+    "task": "A tar archive 'archive.tar' is provided. Extract it and count how many .dat files\nit contains. Write that count to out.txt.",
+    "sandbox": "tar_extract_count"
+  },
+  {
+    "id": "term/script_fix",
+    "task": "There is a bash script 'solve.sh' that is SUPPOSED to print the sum of all numbers\nin data.txt, but it has a bug. Fix the script so it correctly prints the sum,\nrun it, and write the correct sum (a single integer) to out.txt.",
+    "sandbox": "script_fix"
+  },
+  {
+    "id": "term/script_write",
+    "task": "pairs.csv columns: a,b (header included). Write a script (any language) that sums\n(a+b) over all rows where (a+b) is even. Run it and write the resulting sum\n(a single integer) to out.txt.",
+    "sandbox": "script_write"
+  }
+]

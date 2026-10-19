@@ -1,0 +1,202 @@
+[
+  {
+    "id": "term/join_vip_revenue",
+    "answer": "19940"
+  },
+  {
+    "id": "term/anti_join_products",
+    "answer": "1"
+  },
+  {
+    "id": "term/full_outer_keys",
+    "answer": "33"
+  },
+  {
+    "id": "term/max_concurrency",
+    "answer": "12"
+  },
+  {
+    "id": "term/tar_then_count",
+    "answer": "8"
+  },
+  {
+    "id": "term/nested_tar",
+    "answer": "15"
+  },
+  {
+    "id": "term/git_introduced",
+    "answer": "eb88ac60bbc0b758ea86d15e509c1496252fb687"
+  },
+  {
+    "id": "term/git_lines_per_author",
+    "answer": "18"
+  },
+  {
+    "id": "term/git_diff_commits",
+    "answer": "11"
+  },
+  {
+    "id": "term/base64_decode_count",
+    "answer": "30"
+  },
+  {
+    "id": "term/rot13_find",
+    "answer": "key-8309"
+  },
+  {
+    "id": "term/hex_decode",
+    "answer": "msg-87087"
+  },
+  {
+    "id": "term/fixed_width",
+    "answer": "618103"
+  },
+  {
+    "id": "term/quoted_csv",
+    "answer": "2922"
+  },
+  {
+    "id": "term/jsonl_sum",
+    "answer": "7593"
+  },
+  {
+    "id": "term/ini_sum",
+    "answer": "270"
+  },
+  {
+    "id": "term/props_count",
+    "answer": "42"
+  },
+  {
+    "id": "term/env_count",
+    "answer": "29"
+  },
+  {
+    "id": "term/dockerfile_layers",
+    "answer": "11"
+  },
+  {
+    "id": "term/url_domain",
+    "answer": "d3.com"
+  },
+  {
+    "id": "term/dns_zone",
+    "answer": "A"
+  },
+  {
+    "id": "term/fw_blocked",
+    "answer": "38"
+  },
+  {
+    "id": "term/word_tiebreak",
+    "answer": "w10"
+  },
+  {
+    "id": "term/longest_line",
+    "answer": "206"
+  },
+  {
+    "id": "term/file_intersection",
+    "answer": "25"
+  },
+  {
+    "id": "term/sym_diff",
+    "answer": "19"
+  },
+  {
+    "id": "term/natural_sort",
+    "answer": "file025.txt"
+  },
+  {
+    "id": "term/version_sort",
+    "answer": "4.19.14"
+  },
+  {
+    "id": "term/date_latest",
+    "answer": "2023-12-26"
+  },
+  {
+    "id": "term/merge_sorted",
+    "answer": "48"
+  },
+  {
+    "id": "term/every_kth",
+    "answer": "662"
+  },
+  {
+    "id": "term/sliding_window",
+    "answer": "308"
+  },
+  {
+    "id": "term/two_sum",
+    "answer": "13"
+  },
+  {
+    "id": "term/max_subarray",
+    "answer": "55"
+  },
+  {
+    "id": "term/primes_count",
+    "answer": "33"
+  },
+  {
+    "id": "term/collatz",
+    "answer": "155"
+  },
+  {
+    "id": "term/gcd_list",
+    "answer": "1"
+  },
+  {
+    "id": "term/lcm_list",
+    "answer": "5460"
+  },
+  {
+    "id": "term/roman_sum",
+    "answer": "41856"
+  },
+  {
+    "id": "term/bit_count",
+    "answer": "408"
+  },
+  {
+    "id": "term/xor_list",
+    "answer": "544"
+  },
+  {
+    "id": "term/paren_depth",
+    "answer": "7"
+  },
+  {
+    "id": "term/rpn_eval",
+    "answer": "570"
+  },
+  {
+    "id": "term/anagram_groups",
+    "answer": "7"
+  },
+  {
+    "id": "term/missing_number",
+    "answer": "4"
+  },
+  {
+    "id": "term/duplicate_number",
+    "answer": "1"
+  },
+  {
+    "id": "term/pos_subarray",
+    "answer": "1122"
+  },
+  {
+    "id": "term/graph_components",
+    "answer": "29"
+  },
+  {
+    "id": "term/bfs_shortest",
+    "answer": "3"
+  },
+  {
+    "id": "term/multi_bug_script",
+    "answer": "648"
+  }
+]
