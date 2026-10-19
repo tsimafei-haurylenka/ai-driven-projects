@@ -11,12 +11,14 @@
 #   ./install.sh [command] [options]
 #
 # Commands:
-#   install     Install the server (default)
+#   install     Install/update the server on the local machine (default)
+#   deploy      Push the repo to a remote server and run install there
 #   check       Probe the server endpoints
 #   uninstall   Remove the server
 #
 # Options:
-#   --host HOST       Host to probe for check (default: localhost)
+#   --host HOST       deploy target / check host (deploy: required)
+#   --user USER       deploy ssh user (default: current user)
 #   --port PORT       Server port (default: 8090)
 #   --prefix DIR      Server install dir (default: ~/llama-metrics)
 #   --system          Install a *system* systemd unit (needs sudo)
@@ -24,10 +26,16 @@
 #   --dry-run         Show what would be done without doing it
 #   -h, --help        Show this help
 #
+# Deploy reads credentials from env (never stored in the repo):
+#   SSH_PASS   ssh password (uses sshpass when set)
+#   SUDO_PASS  remote sudo password (piped to sudo -S; else an interactive
+#              prompt is shown via ssh -t)
+#
 # Examples:
 #   ./install.sh install
 #   ./install.sh check
 #   sudo ./install.sh install --system
+#   SSH_PASS=... SUDO_PASS=... ./install.sh deploy --host 192.168.1.104 --user timoti
 #
 set -euo pipefail
 
@@ -47,6 +55,7 @@ SERVER_DIR="$SCRIPT_DIR/server"
 # ---- defaults ----
 CMD="install"
 HOST="localhost"
+DEPLOY_USER="$(id -un)"
 PORT="8090"
 PREFIX="$HOME/llama-metrics"
 USE_SYSTEM=0
@@ -69,13 +78,14 @@ run() {  # run a command, honoring --dry-run
 
 have() { command -v "$1" >/dev/null 2>&1; }
 
-usage() { sed -n '2,30p' "$0" | sed 's/^# \{0,1\}//'; }
+usage() { sed -n '2,40p' "$0" | sed 's/^# \{0,1\}//'; }
 
 # ---- arg parsing ----
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    install|check|uninstall) CMD="$1"; shift ;;
+    install|deploy|check|uninstall) CMD="$1"; shift ;;
     --host)      HOST="$2"; shift 2 ;;
+    --user)      DEPLOY_USER="$2"; shift 2 ;;
     --port)      PORT="$2"; shift 2 ;;
     --prefix)    PREFIX="$2"; shift 2 ;;
     --system)    USE_SYSTEM=1; shift ;;
@@ -102,26 +112,40 @@ install() {
   [[ "$pyver" == 3.1* || "$pyver" == 3.[2-9]* || "$pyver" == 4.* ]] \
     || warn "python $pyver is older than 3.10; the server may not run"
 
-  # 2. files
+  # 2. files (keep a backup of the previous main file when it differs)
   log "Installing files to $PREFIX"
   run mkdir -p "$PREFIX"
+  if [[ -f "$PREFIX/llama_metrics.py" ]] && ! cmp -s "$SERVER_DIR/llama_metrics.py" "$PREFIX/llama_metrics.py"; then
+    run cp "$PREFIX/llama_metrics.py" "$PREFIX/llama_metrics.py.bak.$(date +%Y%m%d-%H%M%S)"
+  fi
   run cp "$SERVER_DIR/llama_metrics.py" "$PREFIX/llama_metrics.py"
   if [[ ! -f "$PREFIX/config.json" ]]; then
     run cp "$SERVER_DIR/config.json" "$PREFIX/config.json"
+  fi
+  # under sudo, installed files land root-owned; the service runs as the real user
+  if [[ "$(id -u)" -eq 0 && -n "${SUDO_USER:-}" ]]; then
+    run chown -R "$REAL_USER":"$REAL_USER" "$PREFIX"
   fi
   ok "server files in place"
 
   # 3. venv + dependencies (isolated; avoids PEP 668 / system-python pollution).
   # Recreated only if missing; deps reinstalled on every run so updates apply.
   local venv_python="$PREFIX/.venv/bin/python"
-  if [[ ! -x "$venv_python" ]]; then
+  if [[ "$DRY_RUN" -eq 0 && ! -x "$venv_python" ]]; then
     log "Creating venv at $PREFIX/.venv ..."
-    run python3 -m venv "$PREFIX/.venv"
+    python3 -m venv "$PREFIX/.venv" || warn "venv creation failed; will try system python"
   fi
   log "Installing python deps (mcp, uvicorn) into venv ..."
-  run "$venv_python" -m pip install --quiet --disable-pip-version-check \
-      -r "$SERVER_DIR/requirements.txt"
-  ok "python deps in venv"
+  if [[ "$DRY_RUN" -eq 1 ]]; then
+    printf '  dry: pip install -r requirements.txt\n'
+  elif [[ -x "$venv_python" ]] && "$venv_python" -m pip install --quiet --disable-pip-version-check -r "$SERVER_DIR/requirements.txt"; then
+    ok "python deps in venv"
+  elif python3 -c 'import mcp.server.mcpserver' 2>/dev/null; then
+    warn "venv/pip failed, but system python already has deps -> using $(command -v python3)"
+    VENV_FAILED=1
+  else
+    die "cannot provide deps: venv pip failed and system python lacks 'mcp'"
+  fi
 
   # 4. service
   if [[ "$NO_SYSTEMD" -eq 1 ]]; then
@@ -145,6 +169,7 @@ install() {
   local user python
   user="$REAL_USER"
   python="$PREFIX/.venv/bin/python"
+  [[ "${VENV_FAILED:-0}" -eq 1 ]] && python="$(command -v python3)"
   # Substitute placeholders in the unit template.
   if [[ "$DRY_RUN" -eq 1 ]]; then
     printf '  dry: write unit file\n'
@@ -167,6 +192,45 @@ install() {
   run $sd enable llama-metrics.service
   run $sd restart llama-metrics.service
   ok "service (re)started"
+}
+
+# =====================================================================
+# DEPLOY (repo -> remote server -> install.sh install there)
+# =====================================================================
+deploy() {
+  [[ "$HOST" != "localhost" ]] || die "deploy needs --host HOST"
+  local target="$DEPLOY_USER@$HOST"
+  local stage="llama-metrics-stage"
+  local stage_abs="/home/$DEPLOY_USER/$stage"
+  local ssh_opts=(-o StrictHostKeyChecking=no)
+  local ssh_cmd=(ssh "${ssh_opts[@]}") rsync_e=("ssh ${ssh_opts[*]}")
+  if [[ -n "${SSH_PASS:-}" ]] && have sshpass; then
+    ssh_cmd=(sshpass -p "$SSH_PASS" ssh "${ssh_opts[@]}")
+    rsync_e=("sshpass -p $SSH_PASS ssh ${ssh_opts[*]}")
+  fi
+
+  log "Staging repo files -> $target:~/$stage"
+  rsync -az --delete -e "${rsync_e[0]}" \
+    --exclude '__pycache__' --exclude '*.bak*' --exclude 'srv.pid' --exclude '.venv' \
+    "$SCRIPT_DIR/install.sh" "$target:$stage/"
+  rsync -az --delete -e "${rsync_e[0]}" \
+    --exclude '__pycache__' --exclude '*.bak*' --exclude 'srv.pid' \
+    "$SERVER_DIR/" "$target:$stage/server/"
+
+  log "Running 'install.sh install --system' on $HOST"
+  local remote_cmd="cd $stage_abs && ./install.sh install --system --prefix /home/$DEPLOY_USER/llama-metrics"
+  if [[ -n "${SUDO_PASS:-}" ]]; then
+    printf '%s\n' "$SUDO_PASS" | "${ssh_cmd[@]}" "$target" "sudo -S bash -c '$remote_cmd'"
+  else
+    "${ssh_cmd[@]}" -t "$target" "sudo bash -c '$remote_cmd'"
+  fi
+
+  log "Waiting for the service to answer on $HOST"
+  "${ssh_cmd[@]}" "$target" \
+    "for i in \$(seq 1 15); do code=\$(curl -s -o /dev/null -w '%{http_code}' --max-time 2 http://localhost:$PORT/health); [ \"\$code\" = 200 ] && break; sleep 1; done; \
+     if [ \"\$code\" != 200 ]; then echo 'service did not come up' >&2; exit 1; fi; \
+     for ep in health perf gpu sys stats; do printf '%-6s %s\n' \"\$ep\" \"\$(curl -s -o /dev/null -w '%{http_code}' --max-time 4 http://localhost:$PORT/\$ep)\"; done" || die "deploy failed: service not answering"
+  ok "deploy complete"
 }
 
 # =====================================================================
@@ -210,6 +274,7 @@ uninstall() {
 # =====================================================================
 case "$CMD" in
   install)   install ;;
+  deploy)    deploy ;;
   check)     check ;;
   uninstall) uninstall ;;
 esac

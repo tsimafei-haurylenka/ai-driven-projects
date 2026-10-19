@@ -34,7 +34,7 @@ hardware state.
 
 ```
 llama-metrics/
-├── install.sh                  # installs + configures the server
+├── install.sh                  # install / deploy / check / uninstall
 └── server/
     ├── llama_metrics.py        # the metrics service (HTTP + MCP)
     ├── config.json             # server-side tuning (history window)
@@ -153,12 +153,14 @@ re-run.
 ./install.sh [command] [options]
 
 Commands:
-  install     Install the server (default)
+  install     Install/update the server on the local machine (default)
+  deploy      Push the repo to a remote server and run install there
   check       Probe the server endpoints
   uninstall   Remove the server
 
 Options:
-  --host HOST       Host to probe for check (default: localhost)
+  --host HOST       deploy target / check host (required for deploy)
+  --user USER       deploy ssh user (default: current user)
   --port PORT       Server port (default: 8090)
   --prefix DIR      Server install dir (default: ~/llama-metrics)
   --system          Install a *system* systemd unit (needs sudo)
@@ -175,6 +177,45 @@ Options:
 Installs the python deps, copies the service files to `~/llama-metrics`, and
 installs + starts a user systemd service. Use `sudo ./install.sh install
 --system` for a system-wide unit.
+
+The install is fully idempotent: on a fresh machine it creates everything from
+scratch (install dir, venv, systemd unit); on an already-installed machine it
+updates the service files, refreshes deps, rewrites the unit, and restarts the
+service. A differing `llama_metrics.py` is backed up as
+`llama_metrics.py.bak.<timestamp>` before being replaced, and `config.json` on
+the server is never overwritten once it exists.
+
+### Redeploying changes from the repo
+
+The canonical workflow: edit files in this repo, then push them to the server
+with one command — no manual scp/restart:
+
+```
+SSH_PASS=<ssh-password> SUDO_PASS=<sudo-password> \
+  ./install.sh deploy --host 192.168.1.104 --user timoti
+```
+
+`deploy` rsyncs the repo files (excluding caches/venvs) into a staging dir on
+the server, runs `install.sh install --system` there via sudo, then waits for
+the service to answer and probes every endpoint. If the service does not come
+up, the command fails loudly instead of reporting success. Credentials are
+passed only through environment variables (`SSH_PASS` for ssh via sshpass,
+`SUDO_PASS` for remote `sudo -S`; without `SUDO_PASS` an interactive sudo
+prompt is shown) — never stored in the repo.
+
+Typical change cycle:
+
+```
+# 1. edit server/llama_metrics.py in the repo
+# 2. syntax check
+python3 -m py_compile server/llama_metrics.py
+# 3. push + install + verify in one step
+SSH_PASS=... SUDO_PASS=... ./install.sh deploy --host 192.168.1.104 --user timoti
+```
+
+Rollback if a change misbehaves: the previous file is on the server as
+`llama_metrics.py.bak.<timestamp>`; copy it over and run the deploy command
+again, or run `install.sh install --system` directly on the server.
 
 ### Verify
 
